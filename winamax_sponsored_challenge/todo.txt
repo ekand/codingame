@@ -1,0 +1,2 @@
+# Todo
+- generate next boards from current board
