@@ -93,7 +93,7 @@ def new_iterative_backtrack(board_string, depth=0, analysis_output=False):
         if analysis_output:
             depth_print('is_complete_board was True', depth)
         # print(f'found_it at depth {depth}.', board)
-        return board
+        return board_list_to_board_string(board)
     # if analysis_output:
     #     print('checking is_invalid_board')
     elif is_invalid_board(board):
@@ -606,9 +606,9 @@ if __name__ == '__main__':
     # test()
 
     if not ready_for_codingame:
-        # my_test = new_iterative_backtrack(board_string=board_list_to_board_string([[4, '.', '.', 'X', 'X'], ['.', 'H', '.', 'H', '.'], ['.', '.', '.', 'H', '.'], ['.', 2, '.', '.', 2], ['.', '.', '.', '.', '.']]), depth=0, analysis_output=True)
+        my_test = new_iterative_backtrack(board_string=board_list_to_board_string([[4, '.', '.', 'X', 'X'], ['.', 'H', '.', 'H', '.'], ['.', '.', '.', 'H', '.'], ['.', 2, '.', '.', 2], ['.', '.', '.', '.', '.']]), depth=0, analysis_output=True)
         #my_test = new_iterative_backtrack(baord='4..xx\n.H.H.')
-        my_test = new_iterative_backtrack(board_string=board_list_to_board_string([[2, '.', 'X'], ['.', '.', 'H'], ['.', 'H', 1]]), analysis_output=True)
+        # my_test = new_iterative_backtrack(board_string=board_list_to_board_string([[2, '.', 'X'], ['.', '.', 'H'], ['.', 'H', 1]]), analysis_output=True)
         print('done')
         print(print_board(my_test))
         vs.make_animation("codingame.gif", delay=2)
